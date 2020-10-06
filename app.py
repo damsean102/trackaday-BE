@@ -9,7 +9,7 @@ load_dotenv()
 
 CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 SECRET_ID = os.getenv("SPOTIFY_SECRET_ID")
-PLAYLIST_URI = os.getenv("SPOTIFY_PLAYLIST_ID")
+PLAYLIST_URI = os.getenv("SPOTIFY_PLAYLIST_URI")
 
 sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=SECRET_ID))
 
