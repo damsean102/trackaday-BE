@@ -16,10 +16,11 @@ sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_
 offset = 0
 
 while True:
-    response = sp.playlist_tracks(PLAYLIST_URI, fields='items(track(name, artists.name, preview_url, external_urls.spotify)),total', limit=100, offset=offset)
+    response = sp.playlist_tracks(PLAYLIST_URI, fields='items(track(name, artists.name, preview_url, external_urls.spotify), added_at),total', limit=100, offset=offset)
     pprint(response['items'])
     offset = offset + len(response['items'])
     print(offset, "/", response['total'])
 
     if len(response['items']) == 0:
         break
+
